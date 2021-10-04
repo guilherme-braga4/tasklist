@@ -11,5 +11,10 @@
   border: none;
   flex: 2;
   background-color: #444;
-  color: #eee
+  color: #eee;
+}
+
+.add-button-container {
+  margin-left: 15px;
+  flex: 1;
 }
