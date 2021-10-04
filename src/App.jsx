@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Tasks from './components/tasks'
 import AddTask from './components/Addtask'
+import { v4 as uuidv4 } from "uuid"
 import './App.css'
 
 /*Array Function - processe os componentes em qualquer ordem*/
@@ -30,12 +31,26 @@ const App = () => {
   /*<div> pai, recebe componentes filhos, pois precisamos renderizar todos os componentes filhos em 1 único componente pai*/
 
   /* é no return () onde renderizamos todas as funções para o JS*/
+
+const handleTaskAddition = (taskTitle) => {
+  const newTask = [
+    ...tasks,
+    {
+      title: taskTitle,
+      id: uuidv4(),
+      completed: false,
+    },
+  ]
+
+  setTasks(newTask);
+};
+
   return (
     <div className="container">
-      <AddTask/>
-      <Tasks tasks={tasks} />
+      <AddTask handleTaskAddition={handleTaskAddition}/>
+      <Tasks tasks={tasks}/>
     </div>
   )
 }
 
-export default App
+export default App;
