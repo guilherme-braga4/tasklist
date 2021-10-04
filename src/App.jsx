@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Tasks from './components/tasks'
+import AddTask from './components/Addtask'
 import './App.css'
 
 /*Array Function - processe os componentes em qualquer ordem*/
@@ -31,6 +32,7 @@ const App = () => {
   /* é no return () onde renderizamos todas as funções para o JS*/
   return (
     <div className="container">
+      <AddTask/>
       <Tasks tasks={tasks} />
     </div>
   )
