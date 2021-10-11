@@ -5,7 +5,7 @@ import Button from "./Button"
 
 /*usamos JSX, então o <input> é literalmente um HTML*/
 /* const XXX = (function ou const{props}) => {} */
-const AddTask = ({handleTaskAddition}) => {
+const AddTask = ({handleTaskAddition, handleTaskDelete}) => {
   const [inputData, setInputData] = useState (""); /*o useState captura o que o usuário digitar, por isso ""*/
 
   const handleInputChanges = (e) => {
@@ -17,7 +17,7 @@ const AddTask = ({handleTaskAddition}) => {
       setInputData("");
   };
 
-  
+
 
   return ( 
   <div className="add-task-container">
@@ -30,6 +30,7 @@ const AddTask = ({handleTaskAddition}) => {
       <Button onClick={handleAddTaskClick}>
         ADICIONAR
       </Button>
+      
     </div>
   </div>
    );
